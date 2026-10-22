@@ -76,10 +76,27 @@ The preprocessing may take 1-2 hours.
 <img src="images/preprocess.png" width="60%"> 
 
 
-## Evaluation
 
-Run `predict.py` to get results from MLLMs and `evaluation.py` to calculate metrics.
-The `Predictor` Class in `predict.py` is custom for different MLLMs.
+### Evaluate
+
+Use a separate environment for the evaluation dependencies:
+
+```bash
+python -m venv .venv-eval
+.venv-eval/bin/pip install -r requirements.txt
+.venv-eval/bin/python evaluate.py
+```
+
+The default command evaluates E-mode3 and saves
+`answers/test/Qwen2.5-VL-7B-Instruct/emode3/eval.xlsx`.
+To evaluate E-mode2:
+
+```bash
+.venv-eval/bin/python evaluate.py --pred-root answers/test/Qwen2.5-VL-7B-Instruct/emode2
+```
+
+For another model, set `--pred-root` to its corresponding prediction directory.
+
 
 
 ## Citation
