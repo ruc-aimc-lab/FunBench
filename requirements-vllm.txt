@@ -1,0 +1,7 @@
+# Dedicated vLLM inference environment. Choose a wheel compatible with your GPU/driver.
+# Do not separately upgrade torch/transformers after installing vLLM.
+# Intentionally not a locked or GPU-validated dependency set; see README.md.
+vllm
+qwen-vl-utils
+Pillow>=9.1
+tqdm
